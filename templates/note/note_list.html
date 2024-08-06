@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <p><a href="{% url 'zametka:note-create' %}">Create Note</a></p>
+    <h2>Note List</h2>
+    {% for note in notes %}
+    <ul>
+        <li>
+            <a href="{% url 'zametka:note-details' note.pk %}">{{ note.title }}</a>
+        </li>
+    </ul>
+    {% endfor %}
+{% endblock %}
+
+
